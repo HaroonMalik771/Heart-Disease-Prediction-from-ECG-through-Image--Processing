@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ECG Analysis Result</title>
+</head>
+<body>
+    <h1>ECG Analysis Result</h1>
+    <p>{{ result }}</p>
+    <!-- Display images -->
+    {% for image in images %}
+        <img src="{{ url_for('static', filename='uploads/' + image) }}">
+    {% endfor %}
+</body>
+</html>

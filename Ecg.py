@@ -24,6 +24,9 @@ from joblib import load, dump
 from sklearn import __version__ as sklearn_version
 
 
+
+
+
 class ECG:
     def getImage(self):
         Tk().withdraw()
@@ -173,18 +176,16 @@ class ECG:
         return test_final
 
     def DimensionalReduciton(self, test_final):
-        pca_loaded_model = joblib.load('PCA_ECG (1).pkl')
+        pca_loaded_model = joblib.load('D:\Semester 6\Heart-Disease-Prediction-from-ECG-through-Image--Processing\model\PCA_ECG (1).pkl')
         result = pca_loaded_model.transform(test_final)
         final_df = pd.DataFrame(result)
         return final_df
 
     def ModelLoad_predict(self, final_df):
         # Load the model
-        loaded_model = load('Heart_Disease_Prediction_using_ECG (4).pkl')
+        loaded_model = load('D:\Semester 6\Heart-Disease-Prediction-from-ECG-through-Image--Processing\model\Heart_Disease_Prediction_using_image_processing__ECG.pkl')
 
-        # Resave the model (if successfully loaded) to ensure compatibility
-        if sklearn_version != "1.0.1":
-            dump(loaded_model, 'Updated_Heart_Disease_Model.pkl')
+       
         result = loaded_model.predict(final_df)
         if result[0] == 1:
             return "You ECG corresponds to Myocardial Infarction"
