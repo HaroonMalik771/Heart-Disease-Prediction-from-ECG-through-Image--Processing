@@ -210,5 +210,16 @@ if __name__ == "__main__":
     classification_result = ecg.ModelLoad_predict(reduced_data)
     print(classification_result)
 
+# Consider maxOne problem where the goal is to arrange a string of L bits into all ones. At first, the
+# solution may seem trivial i.e., for L=8 the solution is [1, 1, 1, 1, 1, 1, 1, 1]. Despite this, we shall see
+# how many iterations it will take for an instance of genetic algorithm to find the solution.
+
+
+#write the  code for the genetic algorithm
+# def genetic_algorithm():
+#     #initialize the population
+#     population = []
+#     for i in range(10):
+#         population.append(random.randint(0, 1))
 
 
